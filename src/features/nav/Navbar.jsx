@@ -18,8 +18,10 @@ export default function Navbar({ setFormOpen }) {
       <Container>
         <Menu.Item as={NavLink} exact to="/" header>
           <img src="/assets/logo.png" alt="logo" style={{ marginRight: 15 }} />
+          Re-vents
         </Menu.Item>
-        <Menu as={NavLink} to="/events" name="Events" />
+        <Menu.Item as={NavLink} to="/events" name="Events" />
+        <Menu.Item as={NavLink} to="/sandbox" name="Sandbox" />
         {authenticated && (
           <Menu.Item>
             <Button
