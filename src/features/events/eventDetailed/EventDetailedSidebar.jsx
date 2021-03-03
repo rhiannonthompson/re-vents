@@ -28,7 +28,7 @@ export default function EventDetailedSidebar({ attendees }) {
                 </Item.Header>
               </Item.Content>
             </Item>
-          ))};
+          ))}
         </Item.Group>
       </Segment>
     </>

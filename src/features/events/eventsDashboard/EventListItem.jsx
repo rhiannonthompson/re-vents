@@ -3,37 +3,35 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button, Icon, Item, List, Segment } from "semantic-ui-react";
 import EventListAttendee from "./eventListAttendee";
-import {deleteEvent} from "../eventActions"
+import { deleteEvent } from "../eventActions";
+import { format } from "date-fns"; 
 
-export default function EventListItem({event}) {
-  
+export default function EventListItem({ event }) {
   const dispatch = useDispatch();
-  
+
   return (
     <Segment.Group>
       <Segment>
         <Item.Group>
           <Item>
-            <Item.Image size="tiny" circular src={event.hostPhotoURL}/>
+            <Item.Image size="tiny" circular src={event.hostPhotoURL} />
             <Item.Content>
-              <Item.Header content={event.title}/>
-              <Item.Description>
-                hosted by Bob
-              </Item.Description>
+              <Item.Header content={event.title} />
+              <Item.Description>hosted by Bob</Item.Description>
             </Item.Content>
           </Item>
         </Item.Group>
       </Segment>
       <Segment>
         <span>
-          <Icon name="clock"/> {event.date}
-          <Icon name="marker"/> {event.venue}
+          <Icon name="clock" /> {format(event.date, "MMMM d, yyyy h:mm a")}
+          <Icon name="marker" /> {event.venue}
         </span>
       </Segment>
       <Segment secondary>
         <List horizontal>
-          {event.attendees.map(attendee => (
-            <EventListAttendee key={attendee.id} attendee={attendee}/>
+          {event.attendees.map((attendee) => (
+            <EventListAttendee key={attendee.id} attendee={attendee} />
           ))}
         </List>
       </Segment>
@@ -49,10 +47,10 @@ export default function EventListItem({event}) {
           color="teal"
           floated="right"
           content="View"
-          as={Link} to={`/events/${event.id}`}
+          as={Link}
+          to={`/events/${event.id}`}
         />
       </Segment>
-
-  </Segment.Group>
-  )
+    </Segment.Group>
+  );
 }

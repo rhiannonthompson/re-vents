@@ -1,5 +1,5 @@
 import React from "react";
-import {Segment, Header, Comment, Form, Button} from "semantic-ui-react"
+import { Segment, Header, Comment, Form, Button } from "semantic-ui-react";
 
 export default function EventDetailedChat() {
   return (
@@ -89,5 +89,5 @@ export default function EventDetailedChat() {
         </Comment.Group>
       </Segment>
     </>
-  );
+  )
 }

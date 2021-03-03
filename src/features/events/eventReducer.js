@@ -8,7 +8,7 @@ const initialState = {
 }
 
 
-export default function eventReducer(state = initialState, {type, payload}) {
+export default function eventReducer(state = initialState, { type, payload }) {
   switch (type) {
     case CREATE_EVENT:
       return {
@@ -25,6 +25,6 @@ export default function eventReducer(state = initialState, {type, payload}) {
         events: [...state.events.filter(evt => evt.id !== payload)]
       }
     default:
-      return state;
+      return state
   }
 }
