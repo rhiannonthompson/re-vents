@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Icon, Item, Label, List, Segment } from "semantic-ui-react";
-import EventListAttendee from "./eventListAttendee";
+import EventListAttendee from "./EventListAttendee";
 import { format } from "date-fns"; 
 import { deleteEventInFirestore } from "../../../app/firestore/firestoreService";
 
