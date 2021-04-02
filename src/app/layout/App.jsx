@@ -6,7 +6,6 @@ import Navbar from "../../features/nav/Navbar";
 import HomePage from "../../features/home/HomePage";
 import EventDetailedPage from "../../features/events/eventDetailed/EventDetailedPage";
 import EventForm from "../../features/events/eventForm/EventForm";
-import SandBox from "../../features/sandbox/Sandbox";
 import ModalManager from "../common/modals/ModalManager";
 import { ToastContainer } from "react-toastify"
 import ErrorComponent from "../common/errors/ErrorComponent";
@@ -37,7 +36,6 @@ function App() {
             <Navbar />
             <Container className="main">
               <Route exact path="/events" component={EventDashboard} />
-              <Route exact path="/sandbox" component={SandBox} />
               <Route path="/events/:id" component={EventDetailedPage} />
               <PrivateRoute
                 path={["/createEvent", "/manage/:id"]}
