@@ -61,7 +61,7 @@ export default function PhotosTab({ profile, isCurrentUser }) {
               basic
               content={editMode ? "Cancel" : "Add Photo"}
             />
-          )}
+            )}
         </Grid.Column>
         <Grid.Column width={16}>
           {editMode ? (
@@ -71,6 +71,7 @@ export default function PhotosTab({ profile, isCurrentUser }) {
               {photos.map((photo) => (
                 <Card key={photo.id}>
                   <Image src={photo.url} />
+                  {isCurrentUser && (
                   <Button.Group fluid widths={2}>
                     <Button
                       name={photo.id}
@@ -94,13 +95,15 @@ export default function PhotosTab({ profile, isCurrentUser }) {
                       color="red"
                       icon="trash"
                     />
-                  </Button.Group>
+                    </Button.Group>
+                    )}
                 </Card>
               ))}
             </Card.Group>
           )}
         </Grid.Column>
       </Grid>
+     
     </Tab.Pane>
   );
 }
